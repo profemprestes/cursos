@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Utulab | Matías Prestes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="sistemas.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Esquema</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-project-diagram"></i> 1. Introducción al Proyecto</span>
+                    <ul class="submenu">
+                        <li><a href="#objetivos-proyecto"><i class="fas fa-bullseye"></i> 1.1. Objetivos y Alcance</a></li>
+                        <li><a href="#metodologia-proyecto"><i class="fas fa-clipboard-list"></i> 1.2. Metodología de Trabajo</a></li>
+                        <li><a href="#planificacion-proyecto"><i class="fas fa-calendar-alt"></i> 1.3. Planificación y Cronograma</a></li>
+                        <li><a href="#equipos-proyecto"><i class="fas fa-users"></i> 1.4. Formación de Equipos</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-search"></i> 2. Análisis y Diseño</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-user-friends"></i> 2.1. Análisis de Requisitos</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#identificacion-problemas"><i class="fas fa-exclamation-triangle"></i> 2.1.1. Identificación de Problemas</a></li>
+                                <li><a href="#entrevistas-usuarios"><i class="fas fa-comments"></i> 2.1.2. Entrevistas con Usuarios</a></li>
+                                <li><a href="#documentacion-requisitos"><i class="fas fa-file-alt"></i> 2.1.3. Documentación de Requisitos</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-pencil-ruler"></i> 2.2. Diseño de la Solución</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#diseno-arquitectura"><i class="fas fa-building"></i> 2.2.1. Diseño de Arquitectura</a></li>
+                                <li><a href="#diseno-bd"><i class="fas fa-database"></i> 2.2.2. Diseño de Base de Datos</a></li>
+                                <li><a href="#diseno-interfaces"><i class="fas fa-desktop"></i> 2.2.3. Diseño de Interfaces</a></li>
+                                <li><a href="#diagramas-uml"><i class="fas fa-project-diagram"></i> 2.2.4. Diagramas UML</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-code"></i> 3. Implementación</span>
+                    <ul class="submenu">
+                        <li><a href="#entorno-desarrollo"><i class="fas fa-laptop-code"></i> 3.1. Configuración del Entorno de Desarrollo</a></li>
+                        <li><a href="#codigo-frontend"><i class="fas fa-desktop"></i> 3.2. Desarrollo de Frontend</a></li>
+                        <li><a href="#codigo-backend"><i class="fas fa-server"></i> 3.3. Desarrollo de Backend</a></li>
+                        <li><a href="#integracion-componentes"><i class="fas fa-puzzle-piece"></i> 3.4. Integración de Componentes</a></li>
+                        <li><a href="#control-versiones"><i class="fab fa-git-alt"></i> 3.5. Control de Versiones</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-vial"></i> 4. Pruebas y Despliegue</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-check-circle"></i> 4.1. Pruebas</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#pruebas-unitarias"><i class="fas fa-cube"></i> 4.1.1. Pruebas Unitarias</a></li>
+                                <li><a href="#pruebas-integracion"><i class="fas fa-cubes"></i> 4.1.2. Pruebas de Integración</a></li>
+                                <li><a href="#pruebas-sistema"><i class="fas fa-laptop"></i> 4.1.3. Pruebas de Sistema</a></li>
+                                <li><a href="#pruebas-aceptacion"><i class="fas fa-thumbs-up"></i> 4.1.4. Pruebas de Aceptación</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#despliegue-aplicacion"><i class="fas fa-rocket"></i> 4.2. Despliegue de la Aplicación</a></li>
+                        <li><a href="#configuracion-servidor"><i class="fas fa-server"></i> 4.3. Configuración del Servidor</a></li>
+                        <li><a href="#documentacion-sistema"><i class="fas fa-book"></i> 4.4. Documentación del Sistema</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-chalkboard-teacher"></i> 5. Presentación y Evaluación</span>
+                    <ul class="submenu">
+                        <li><a href="#preparacion-presentacion"><i class="fas fa-file-powerpoint"></i> 5.1. Preparación de la Presentación</a></li>
+                        <li><a href="#demostracion-proyecto"><i class="fas fa-desktop"></i> 5.2. Demostración del Proyecto</a></li>
+                        <li><a href="#defensa-proyecto"><i class="fas fa-comment"></i> 5.3. Defensa del Proyecto</a></li>
+                        <li><a href="#evaluacion-final"><i class="fas fa-star"></i> 5.4. Evaluación Final</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Sección de Cabecera -->
+            <section class="course-header-section">
+                <div id="particles-js"></div>
+                <div class="course-header-content" data-aos="fade-up">
+                    <h1>Proyecto Utulab</h1>
+                    <div class="course-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <p class="course-description">
+                        Bienvenido al curso de Proyecto Utulab. En este espacio desarrollarás un proyecto integral 
+                        aplicando todos los conocimientos adquiridos durante tu formación académica. Desde el análisis 
+                        y diseño hasta la implementación y presentación final, crearás una solución completa que 
+                        demuestre tus habilidades y competencias profesionales.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Contenido del Curso -->
+            <section class="course-content-section">
+                <div class="course-container">
+                    <!-- Unidad 1: Introducción -->
+                    <div class="content-unit" id="objetivos-proyecto" data-aos="fade-up">
+                        <h2>1. Introducción al Proyecto</h2>
+                        <h3>1.1. Objetivos y Alcance</h3>
+                        
+                        <div class="content-card">
+                            <p>
+                                El Proyecto Utulab es un proyecto integral que busca que los estudiantes desarrollen 
+                                una solución de software completa que responda a necesidades reales, aplicando los 
+                                conocimientos adquiridos durante toda su formación académica.
+                            </p>
+                            <p>
+                                <strong>Objetivos principales:</strong>
+                            </p>
+                            <ul>
+                                <li>Aplicar de manera práctica e integrada los conocimientos adquiridos en las diferentes asignaturas.</li>
+                                <li>Desarrollar habilidades de análisis, diseño, implementación y documentación de sistemas de información.</li>
+                                <li>Fomentar el trabajo en equipo y la comunicación efectiva entre los miembros del grupo.</li>
+                                <li>Resolver problemas complejos mediante el uso adecuado de metodologías de desarrollo.</li>
+                                <li>Generar un producto funcional que pueda ser utilizado en un entorno real.</li>
+                            </ul>
+                            <p>
+                                <strong>Alcance del proyecto:</strong>
+                            </p>
+                            <p>
+                                El proyecto abarcará todas las fases del ciclo de vida del desarrollo de software, incluyendo:
+                            </p>
+                            <ul>
+                                <li>Análisis de requisitos y definición del problema</li>
+                                <li>Diseño de la solución (arquitectura, base de datos, interfaces)</li>
+                                <li>Implementación (codificación)</li>
+                                <li>Pruebas y aseguramiento de la calidad</li>
+                                <li>Despliegue y configuración</li>
+                                <li>Documentación técnica y de usuario</li>
+                                <li>Presentación y defensa del proyecto</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Más contenido sería añadido aquí para otras secciones -->
+                    
+                </div>
+            </section>
+            
+            <!-- Botón de volver al inicio -->
+            <div class="back-to-main">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="sistemas.js"></script>
+</body>
+</html>

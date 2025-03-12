@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Operativos Linux | Matías Prestes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="sistemas.css">
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Sistemas Operativos</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-book"></i> 1. Fundamentos del Sistema Operativo
+                        Linux</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-history"></i> 1.1. Historia y Filosofía de
+                                Linux</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#historia-unix-linux"><i class="fas fa-terminal"></i> 1.1.1. Historia del
+                                        Sistema Operativo Unix y la Creación de Linux</a></li>
+                                <li><a href="#filosofia-open-source"><i class="fab fa-osi"></i> 1.1.2. Filosofía del
+                                        Software Libre y de Código Abierto</a></li>
+                                <li><a href="#distribuciones-linux"><i class="fab fa-linux"></i> 1.1.3. Distribuciones
+                                        de Linux: Diferencias y Similitudes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-download"></i> 1.2. Instalación y
+                                Configuración Inicial</span>
+                        </li>
+                        <li><a href="#instalacion"><i class="fas fa-cog"></i> 1.3. Instalación</a></li>
+                        <li><a href="#medios-instalacion"><i class="fas fa-usb"></i> 1.4. Medios de Instalación (USB,
+                                DVD, Red)</a></li>
+                        <li><a href="#instalacion-paso-paso"><i class="fas fa-list-ol"></i> 1.5. Instalación Paso a Paso
+                                de Diferentes Distribuciones</a></li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-sliders-h"></i> 1.6. Configuración
+                                Inicial</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#particiones-filesystems"><i class="fas fa-hdd"></i> 1.6.1. Selección de
+                                        Particiones, Sistemas de Archivos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#config-basica"><i class="fas fa-wrench"></i> 1.7. Configuración Básica del
+                                Sistema</a></li>
+                        <li><a href="#config-red"><i class="fas fa-network-wired"></i> 1.8. Configuración de la Red</a>
+                        </li>
+                        <li><a href="#config-usuarios"><i class="fas fa-users-cog"></i> 1.9. Configuración de Usuarios y
+                                Permisos</a></li>
+                        <li><a href="#gestion-paquetes"><i class="fas fa-box"></i> 1.10. Actualización y Gestión de
+                                Paquetes</a></li>
+                        <li><a href="#comandos-herramientas"><i class="fas fa-terminal"></i> 1.11. Comandos y
+                                Herramientas de la Línea de Comandos</a></li>
+                        <li><a href="#uso-terminal"><i class="fas fa-keyboard"></i> 1.12. Uso de la Terminal</a></li>
+                        <li><a href="#navegacion-archivos"><i class="fas fa-folder-open"></i> 1.13. Navegación del
+                                Sistema de Archivos</a></li>
+                        <li><a href="#manipulacion-archivos"><i class="fas fa-file-alt"></i> 1.14. Manipulación de
+                                Archivos y Directorios</a></li>
+                        <li><a href="#edicion-archivos"><i class="fas fa-edit"></i> 1.15. Visualización y Edición de
+                                Archivos</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-lock"></i> 2. Permisos y Propiedades</span>
+                    <ul class="submenu">
+                        <li><a href="#procesos-recursos"><i class="fas fa-microchip"></i> 2.1. Procesos y Gestión de
+                                Recursos</a></li>
+                        <li><a href="#administracion-usuarios"><i class="fas fa-user-shield"></i> 2.2. Administración de
+                                Usuarios y Grupos</a></li>
+                        <li><a href="#gestion-cuentas"><i class="fas fa-id-card"></i> 2.3. Gestión de Cuentas de
+                                Usuario</a></li>
+                        <li><a href="#creacion-usuarios"><i class="fas fa-user-plus"></i> 2.4. Creación y Eliminación de
+                                Usuarios</a></li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-user-edit"></i> 2.5. Modificación de
+                                Cuentas de Usuario</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#gestion-passwords"><i class="fas fa-key"></i> 2.5.1. Gestión de
+                                        Contraseñas</a></li>
+                                <li><a href="#gestion-grupos"><i class="fas fa-users"></i> 2.5.2. Gestión de Grupos</a>
+                                </li>
+                                <li><a href="#admin-grupos"><i class="fas fa-user-friends"></i> 2.5.3. Creación,
+                                        Eliminación y Modificación de Grupos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-tasks"></i> 3. Automatización de Tareas y
+                        Scripts</span>
+                    <ul class="submenu">
+                        <li><a href="#shell-script"><i class="fas fa-code"></i> 3.1. Uso de Shell Script</a></li>
+                        <li><a href="#bash-scripts"><i class="fas fa-file-code"></i> 3.2. Escritura de Scripts en
+                                Bash</a></li>
+                        <li><a href="#variables-control"><i class="fas fa-project-diagram"></i> 3.3. Uso de Variables,
+                                Estructuras de Control y Funciones</a></li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-calendar-alt"></i> 3.4. Tareas Programadas
+                                Cron</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#config-cron"><i class="fas fa-clock"></i> 3.4.1. Configuración de Tareas
+                                        Cron</a></li>
+                                <li><a href="#gestion-at-batch"><i class="fas fa-hourglass-half"></i> 3.4.2. Gestión de
+                                        Tareas at y batch</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Sección de Cabecera -->
+            <section class="course-header-section">
+                <div id="particles-js"></div>
+                <div class="course-header-content" data-aos="fade-up">
+                    <h1>Sistemas Operativos Linux</h1>
+                    <div class="course-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <p class="course-description">
+                        Bienvenido al curso de Sistemas Operativos Linux. En este curso aprenderás los fundamentos
+                        del sistema operativo Linux, desde su instalación y configuración hasta la administración
+                        avanzada de usuarios, permisos y automatización de tareas mediante scripts.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Materiales Recomendados -->
+            <section class="recommended-materials-section" data-aos="fade-up">
+                <div class="course-container">
+                    <h2>Materiales Recomendados</h2>
+                    <div class="recommended-materials-list">
+                        <div class="material-card" data-aos="fade-right">
+                            <i class="fas fa-book"></i>
+                            <a href="https://www.fultus.com" target="_blank">Garrels, M. (2010). Bash Guide for
+                                Beginners. Fultus Corporation.</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="100">
+                            <i class="fas fa-globe"></i>
+                            <a href="https://www.gnu.org/gnu/thegnuproject.es.html" target="_blank">GNU (2013). El
+                                proyecto GNU. https://www.gnu.org/gnu/thegnuproject.es.html</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="200">
+                            <i class="fas fa-book-open"></i>
+                            <a href="https://www.pearson.com" target="_blank">Tanenbaum, A. S. (2003). Sistemas
+                                operativos modernos. Pearson Educación.</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="300">
+                            <i class="fas fa-laptop-code"></i>
+                            <a href="https://www.ucm.es" target="_blank">Velasco, S. (2008). Creación de scripts en
+                                Linux. Universidad Complutense de Madrid.</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Contenido del Curso -->
+            <section class="course-content-section">
+                <div class="course-container">
+                    <!-- Unidad 1: Fundamentos -->
+                    <div class="content-unit" id="historia-unix-linux" data-aos="fade-up">
+                        <h2>1. Fundamentos del Sistema Operativo Linux</h2>
+                        <h3>1.1. Historia y Filosofía de Linux</h3>
+                        <h4>1.1.1. Historia del Sistema Operativo Unix y la Creación de Linux</h4>
+
+                        <div class="content-card">
+                            <p>
+                                Linux fue creado en 1991 por Linus Torvalds mientras era estudiante en la Universidad de
+                                Helsinki.
+                                Su desarrollo comenzó como un proyecto personal para crear un nuevo kernel de sistema
+                                operativo libre,
+                                inspirado en MINIX, una versión pequeña de UNIX.
+                            </p>
+                            <p>
+                                El kernel de Linux se distribuyó inicialmente bajo su propia licencia, que tenía
+                                restricciones
+                                sobre actividades comerciales. Sin embargo, en 1992, el kernel se relicenció bajo la GNU
+                                General
+                                Public License (GPL), lo que permitió su distribución libre y comercial.
+                            </p>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1969</div>
+                                    <div class="timeline-content">
+                                        <h5>Unix creado en Bell Labs</h5>
+                                        <p>Ken Thompson y Dennis Ritchie desarrollan UNIX en AT&T Bell Labs.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1983</div>
+                                    <div class="timeline-content">
+                                        <h5>Proyecto GNU</h5>
+                                        <p>Richard Stallman inicia el Proyecto GNU para crear un sistema operativo tipo
+                                            Unix completamente libre.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1991</div>
+                                    <div class="timeline-content">
+                                        <h5>Linux es creado</h5>
+                                        <p>Linus Torvalds crea la primera versión del kernel Linux y la comparte en un
+                                            grupo de noticias.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1992-1993</div>
+                                    <div class="timeline-content">
+                                        <h5>Primeras distribuciones</h5>
+                                        <p>Aparecen las primeras distribuciones completas de Linux, incluyendo Slackware
+                                            y Debian.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="filosofia-open-source" data-aos="fade-up">
+                        <h4>1.1.2. Filosofía del Software Libre y de Código Abierto</h4>
+                        <div class="content-card">
+                            <p>
+                                La filosofía del software libre y de código abierto es central en Linux. Promueve la
+                                libertad de usar, estudiar, modificar y distribuir el software. Esto fomenta la
+                                colaboración y la innovación, permitiendo a los desarrolladores de todo el mundo
+                                contribuir al software y mejorarlo constantemente.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="distribuciones-linux" data-aos="fade-up">
+                        <h4>1.1.3. Distribuciones de Linux: Diferencias y Similitudes</h4>
+                        <div class="content-card">
+                            <p>
+                                Existen numerosas distribuciones de Linux, cada una adaptada a diferentes necesidades.
+                                Algunas de las más populares incluyen Ubuntu, Fedora, Debian y CentOS. Aunque todas
+                                están basadas en el mismo núcleo (kernel) de Linux, varían en su gestión de paquetes,
+                                entorno de escritorio y herramientas preinstaladas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="instalacion" data-aos="fade-up">
+                        <h3>1.2. Instalación y Configuración Inicial</h3>
+                        <h4>1.3. Instalación</h4>
+                        <div class="content-card">
+                            <p>
+                                La instalación de Linux puede variar según la distribución, pero generalmente sigue
+                                estos pasos:
+                            </p>
+                            <ul>
+                                <li>Descargar la imagen ISO de la distribución deseada.</li>
+                                <li>Crear un medio de instalación (USB, DVD).</li>
+                                <li>Arrancar desde el medio de instalación.</li>
+                                <li>Seguir las instrucciones del instalador.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="medios-instalacion" data-aos="fade-up">
+                        <h4>1.4. Medios de Instalación</h4>
+                        <div class="content-card">
+                            <div class="info-card">
+                                <h5><i class="fas fa-usb"></i> USB</h5>
+                                <p>El método más común y conveniente para instalar Linux.</p>
+                            </div>
+                            <div class="info-card">
+                                <h5><i class="fas fa-dvd"></i> DVD</h5>
+                                <p>Una opción alternativa si no se dispone de un USB.</p>
+                            </div>
+                            <div class="info-card">
+                                <h5><i class="fas fa-network-wired"></i> Red</h5>
+                                <p>Instalación a través de la red, útil para instalaciones masivas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="instalacion-paso-paso" data-aos="fade-up">
+                        <h4>1.5. Instalación Paso a Paso de Diferentes Distribuciones</h4>
+                        <div class="content-card">
+                            <p>
+                                A continuación, se muestra un ejemplo de instalación de Ubuntu:
+                            </p>
+                            <ol>
+                                <li>Descargar la imagen ISO de Ubuntu desde su sitio oficial.</li>
+                                <li>Crear un USB de arranque con la herramienta Rufus.</li>
+                                <li>Arrancar desde el USB y seleccionar "Instalar Ubuntu".</li>
+                                <li>Seguir las instrucciones del instalador, seleccionando el idioma, la zona horaria, y
+                                    creando una cuenta de usuario.</li>
+                                <li>Esperar a que finalice la instalación y reiniciar el sistema.</li>
+                            </ol>
+                            <img src="img/Instalar-y-configurar-Ubuntu-Server-para-desarrollo-web_02.png" alt="Instalación de Ubuntu">
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="particiones-filesystems" data-aos="fade-up">
+                        <h4>1.6.1. Selección de Particiones y Sistemas de Archivos</h4>
+                        <div class="content-card">
+                            <p>
+                                La selección de particiones y sistemas de archivos es crucial para el rendimiento y la
+                                organización del sistema. A continuación, se muestra un diagrama explicativo:
+                            </p>
+                            <img src="img/particionamiento-recomendado-ubuntufacil.png" alt="Diagrama de Particiones">
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="config-basica" data-aos="fade-up">
+                        <h4>1.7. Configuración Básica del Sistema</h4>
+                        <div class="content-card">
+                            <p>
+                                Después de la instalación, es importante realizar algunas configuraciones básicas:
+                            </p>
+                            <ul>
+                                <li>Actualizar el sistema: <code>sudo apt update && sudo apt upgrade</code></li>
+                                <li>Instalar controladores adicionales si es necesario.</li>
+                                <li>Configurar la zona horaria: <code>sudo dpkg-reconfigure tzdata</code></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="config-red" data-aos="fade-up">
+                        <h4>1.8. Configuración de la Red</h4>
+                        <div class="content-card">
+                            <p>
+                                La configuración de la red puede realizarse tanto para conexiones Ethernet como WiFi. A
+                                continuación, se muestra un ejemplo de configuración para cada tipo:
+                            </p>
+                            <h5>Configuración Ethernet</h5>
+                            <pre><code>sudo nano /etc/network/interfaces
+auto eth0
+iface eth0 inet dhcp</code></pre>
+                            <h5>Configuración WiFi</h5>
+                            <pre><code>sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+network={
+    ssid="nombre_de_red"
+    psk="contraseña"
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="config-usuarios" data-aos="fade-up">
+                        <h4>1.9. Configuración de Usuarios y Permisos</h4>
+                        <div class="content-card">
+                            <p>
+                                La gestión de usuarios y permisos en Linux es fundamental para la seguridad y
+                                organización del sistema. A continuación, se muestra una tabla comparativa de comandos y
+                                permisos:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>useradd</code></td>
+                                        <td>Crear un nuevo usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>usermod</code></td>
+                                        <td>Modificar un usuario existente</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>userdel</code></td>
+                                        <td>Eliminar un usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chmod</code></td>
+                                        <td>Cambiar permisos de archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chown</code></td>
+                                        <td>Cambiar propietario de archivos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="gestion-paquetes" data-aos="fade-up">
+                        <h4>1.10. Gestión de Paquetes y Actualizaciones</h4>
+                        <div class="content-card">
+                            <p>
+                                En Linux, la gestión de paquetes se realiza mediante gestores de paquetes como APT, DNF,
+                                entre otros. A continuación, se muestran algunos ejemplos:
+                            </p>
+                            <h5>APT (Debian/Ubuntu)</h5>
+                            <pre><code>sudo apt update
+sudo apt install nombre_paquete</code></pre>
+                            <h5>DNF (Fedora)</h5>
+                            <pre><code>sudo dnf update
+sudo dnf install nombre_paquete</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="comandos-herramientas" data-aos="fade-up">
+                        <h4>1.11. Comandos y Herramientas de la Línea de Comandos</h4>
+                        <div class="content-card">
+                            <p>
+                                La línea de comandos es una herramienta poderosa en Linux. A continuación, se muestran
+                                algunos comandos básicos con ejemplos:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ls</code></td>
+                                        <td>Listar archivos y directorios</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cd</code></td>
+                                        <td>Cambiar de directorio</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cp</code></td>
+                                        <td>Copiar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mv</code></td>
+                                        <td>Mover o renombrar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rm</code></td>
+                                        <td>Eliminar archivos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="uso-terminal" data-aos="fade-up">
+                        <h4>1.12. Uso de la Terminal</h4>
+                        <div class="content-card">
+                            <p>
+                                La terminal es una interfaz de línea de comandos que permite interactuar con el sistema
+                                operativo. A continuación, se muestra una demostración visual de la terminal con
+                                ejemplos de comandos en ejecución:
+                            </p>
+                            <img src="img/interfaces-usuario.png" alt="Demostración de la Terminal">
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="navegacion-archivos" data-aos="fade-up">
+                        <h4>1.13. Navegación del Sistema de Archivos</h4>
+                        <div class="content-card">
+                            <p>
+                                La navegación del sistema de archivos en Linux se realiza principalmente a través de la
+                                terminal. A continuación, se muestran algunos comandos útiles:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>pwd</code></td>
+                                        <td>Mostrar el directorio actual</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ls</code></td>
+                                        <td>Listar archivos y directorios</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cd</code></td>
+                                        <td>Cambiar de directorio</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>find</code></td>
+                                        <td>Buscar archivos y directorios</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="manipulacion-archivos" data-aos="fade-up">
+                        <h4>1.14. Manipulación de Archivos y Directorios</h4>
+                        <div class="content-card">
+                            <p>
+                                La manipulación de archivos y directorios en Linux se realiza mediante comandos
+                                específicos. A continuación, se muestran algunos ejemplos:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>cp</code></td>
+                                        <td>Copiar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mv</code></td>
+                                        <td>Mover o renombrar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rm</code></td>
+                                        <td>Eliminar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mkdir</code></td>
+                                        <td>Crear directorios</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rmdir</code></td>
+                                        <td>Eliminar directorios vacíos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="edicion-archivos" data-aos="fade-up">
+                        <h4>1.15. Visualización y Edición de Archivos</h4>
+                        <div class="content-card">
+                            <p>
+                                La visualización y edición de archivos en Linux se puede realizar mediante varios
+                                editores de texto. A continuación, se muestran algunos ejemplos:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>cat</code></td>
+                                        <td>Mostrar el contenido de un archivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nano</code></td>
+                                        <td>Editor de texto en la terminal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vim</code></td>
+                                        <td>Editor de texto avanzado en la terminal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gedit</code></td>
+                                        <td>Editor de texto gráfico</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Unidad 2: Permisos y Propiedades en Linux -->
+                    <div class="content-unit" id="procesos-recursos" data-aos="fade-up">
+                        <h2>2. Permisos y Propiedades en Linux</h2>
+                        <h3>2.1. Procesos y Gestión de Recursos</h3>
+                        <div class="content-card">
+                            <p>
+                                En Linux, un proceso es una instancia de un programa en ejecución. Los procesos pueden
+                                ejecutarse en primer plano (foreground) o en segundo plano (background).
+                            </p>
+                            <h4>Procesos en Primer Plano y Segundo Plano</h4>
+                            <p>
+                                Los procesos en primer plano son aquellos que ocupan la terminal hasta que finalizan.
+                                Los procesos en segundo plano se ejecutan sin bloquear la terminal.
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ps</code></td>
+                                        <td>Mostrar información sobre los procesos activos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>top</code></td>
+                                        <td>Mostrar los procesos en ejecución en tiempo real</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>htop</code></td>
+                                        <td>Versión mejorada de top con interfaz interactiva</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>kill</code></td>
+                                        <td>Terminar un proceso por su ID</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Prioridades de Procesos</h4>
+                            <p>
+                                Las prioridades de los procesos determinan el orden en que el sistema operativo asigna
+                                tiempo de CPU. Los comandos <code>nice</code> y <code>renice</code> se utilizan para
+                                ajustar estas prioridades.
+                            </p>
+                            <h5>Uso de Recursos del Sistema</h5>
+                            <p>
+                                El comando <code>ulimit</code> se utiliza para limitar los recursos del sistema
+                                disponibles para los procesos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="administracion-usuarios" data-aos="fade-up">
+                        <h3>2.2. Administración de Usuarios y Grupos</h3>
+                        <div class="content-card">
+                            <p>
+                                En Linux, los usuarios y grupos son fundamentales para la gestión de permisos y la
+                                seguridad del sistema.
+                            </p>
+                            <h4>Tipos de Usuarios en Linux</h4>
+                            <p>
+                                Existen varios tipos de usuarios en Linux:
+                            </p>
+                            <ul>
+                                <li><strong>root:</strong> El usuario administrador con todos los permisos.</li>
+                                <li><strong>Usuario normal:</strong> Usuarios con permisos limitados.</li>
+                                <li><strong>Usuario de sistema:</strong> Usuarios creados para ejecutar servicios
+                                    específicos.</li>
+                            </ul>
+                            <h4>Comandos de Administración de Usuarios</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>useradd</code></td>
+                                        <td>Crear un nuevo usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>usermod</code></td>
+                                        <td>Modificar un usuario existente</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>userdel</code></td>
+                                        <td>Eliminar un usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groupadd</code></td>
+                                        <td>Crear un nuevo grupo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groupdel</code></td>
+                                        <td>Eliminar un grupo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>usermod -aG</code></td>
+                                        <td>Añadir un usuario a un grupo</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="gestion-cuentas" data-aos="fade-up">
+                        <h3>2.3. Gestión de Cuentas de Usuario</h3>
+                        <div class="content-card">
+                            <p>
+                                La gestión de cuentas de usuario incluye la configuración de contraseñas, la seguridad y
+                                la monitorización de sesiones activas.
+                            </p>
+                            <h4>Configuración de Cuentas de Usuario</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>passwd</code></td>
+                                        <td>Cambiar la contraseña de un usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chage</code></td>
+                                        <td>Gestionar la caducidad de la contraseña</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>who</code></td>
+                                        <td>Mostrar quién está conectado</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>w</code></td>
+                                        <td>Mostrar información sobre los usuarios conectados</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Seguridad en Contraseñas</h4>
+                            <p>
+                                Los archivos <code>/etc/passwd</code> y <code>/etc/shadow</code> contienen información
+                                sobre las cuentas de usuario y sus contraseñas.
+                            </p>
+                            <h4>Comprobación de Sesiones Activas</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>who</code></td>
+                                        <td>Mostrar quién está conectado</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>last</code></td>
+                                        <td>Mostrar el historial de inicios de sesión</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="creacion-usuarios" data-aos="fade-up">
+                        <h3>2.4. Creación y Eliminación de Usuarios</h3>
+                        <div class="content-card">
+                            <p>
+                                La creación y eliminación de usuarios en Linux se realiza mediante comandos específicos
+                                con opciones avanzadas.
+                            </p>
+                            <h4>Comandos de Creación y Eliminación de Usuarios</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>useradd</code></td>
+                                        <td>Crear un nuevo usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>userdel</code></td>
+                                        <td>Eliminar un usuario</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Permisos Predeterminados y Directorios /home</h4>
+                            <p>
+                                Al crear un usuario, se asignan permisos predeterminados y se crea un directorio en
+                                <code>/home</code> para almacenar sus archivos personales.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="modificacion-cuentas" data-aos="fade-up">
+                        <h3>2.5. Modificación de Cuentas de Usuario</h3>
+                        <h4>2.5.1. Gestión de Contraseñas</h4>
+                        <div class="content-card">
+                            <p>
+                                La gestión de contraseñas incluye cambiar y caducar contraseñas utilizando comandos como
+                                <code>passwd</code> y <code>chage</code>.
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>passwd</code></td>
+                                        <td>Cambiar la contraseña de un usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chage</code></td>
+                                        <td>Gestionar la caducidad de la contraseña</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h4>2.5.2. Gestión de Grupos</h4>
+                        <div class="content-card">
+                            <p>
+                                La gestión de grupos incluye la creación, eliminación y modificación de grupos
+                                utilizando comandos como <code>groupadd</code>, <code>gpasswd</code> y
+                                <code>groupdel</code>.
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>groupadd</code></td>
+                                        <td>Crear un nuevo grupo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gpasswd</code></td>
+                                        <td>Administrar el archivo de contraseñas de grupo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>groupdel</code></td>
+                                        <td>Eliminar un grupo</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h4>2.5.3. Creación, Eliminación y Modificación de Grupos</h4>
+                        <div class="content-card">
+                            <p>
+                                Ejemplos prácticos de cómo crear, eliminar y modificar grupos en Linux.
+                            </p>
+                            <pre><code># Crear un nuevo grupo
+sudo groupadd desarrolladores
+
+# Añadir un usuario a un grupo
+sudo usermod -aG desarrolladores usuario
+
+# Eliminar un grupo
+sudo groupdel desarrolladores
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="permisos-propiedades" data-aos="fade-up">
+                        <h3>2.6. Permisos y Propiedades de Archivos</h3>
+                        <div class="content-card">
+                            <p>
+                                Los permisos en Linux determinan quién puede leer, escribir o ejecutar un archivo. Los
+                                permisos se representan mediante los caracteres <code>rwx</code> (lectura, escritura,
+                                ejecución).
+                            </p>
+                            <h4>Comandos de Permisos y Propiedades</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ls -l</code></td>
+                                        <td>Mostrar los permisos de los archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chmod</code></td>
+                                        <td>Cambiar los permisos de un archivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chown</code></td>
+                                        <td>Cambiar el propietario de un archivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chgrp</code></td>
+                                        <td>Cambiar el grupo de un archivo</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Sistema de Permisos en Números</h4>
+                            <p>
+                                Los permisos también se pueden representar mediante números. Por ejemplo,
+                                <code>chmod 755</code> asigna permisos de lectura, escritura y ejecución al propietario,
+                                y permisos de lectura y ejecución al grupo y a otros.
+                            </p>
+                            <h4>Permisos Especiales</h4>
+                            <p>
+                                Los permisos especiales incluyen SUID, SGID y Sticky Bit, que proporcionan
+                                funcionalidades adicionales de seguridad.
+                            </p>
+                            <pre><code># Asignar permisos SUID
+sudo chmod u+s archivo
+
+# Asignar permisos SGID
+sudo chmod g+s directorio
+
+# Asignar Sticky Bit
+sudo chmod +t directorio
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="control-acceso" data-aos="fade-up">
+                        <h3>2.7. Control de Acceso y Seguridad</h3>
+                        <div class="content-card">
+                            <p>
+                                El control de acceso y la seguridad en Linux se pueden gestionar mediante ACLs (Listas
+                                de Control de Acceso) y PAM (Módulos de Autenticación Pluggable).
+                            </p>
+                            <h4>Uso de ACLs</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>setfacl</code></td>
+                                        <td>Establecer una ACL en un archivo o directorio</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>getfacl</code></td>
+                                        <td>Mostrar las ACLs de un archivo o directorio</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Seguridad en Archivos y Directorios</h4>
+                            <p>
+                                La seguridad en archivos y directorios se puede mejorar mediante el uso de permisos
+                                adecuados y la configuración de ACLs.
+                            </p>
+                            <h4>Bloqueo de Cuentas y Restricciones con PAM</h4>
+                            <p>
+                                PAM permite configurar políticas de autenticación y restricciones de acceso.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="ejemplos-practicos" data-aos="fade-up">
+                        <h3>2.8. Ejemplos Prácticos y Casos de Uso</h3>
+                        <div class="content-card">
+                            <p>
+                                A continuación, se presentan algunos casos de uso reales sobre la administración de
+                                usuarios y permisos en Linux.
+                            </p>
+                            <h4>Combinaciones de Permisos Avanzadas</h4>
+                            <pre><code># Crear un directorio con permisos específicos
+mkdir proyecto
+chmod 770 proyecto
+
+# Asignar permisos de lectura y escritura a un archivo
+touch archivo.txt
+chmod 660 archivo.txt
+
+# Asignar permisos de ejecución a un script
+touch script.sh
+chmod 750 script.sh
+</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Unidad 3: Automatización de Tareas y Scripts en Linux -->
+                    <div class="content-unit" id="shell-script" data-aos="fade-up">
+                        <h2>3. Automatización de Tareas y Scripts en Linux</h2>
+                        <h3>3.1. Uso de Shell Script</h3>
+                        <div class="content-card">
+                            <p>
+                                Los scripts en Linux permiten automatizar tareas repetitivas y complejas. A diferencia
+                                de los comandos manuales, los scripts pueden ejecutar múltiples comandos de manera
+                                secuencial y sin intervención del usuario.
+                            </p>
+                            <h4>Creación de Scripts Básicos</h4>
+                            <p>
+                                Un script básico en Linux comienza con la línea <code>#!/bin/bash</code>, que indica que
+                                el script debe ejecutarse con el intérprete de Bash.
+                            </p>
+                            <pre><code># Crear un script básico
+#!/bin/bash
+echo "Hola, mundo!"
+</code></pre>
+                            <h4>Cómo Ejecutar un Script</h4>
+                            <p>
+                                Para ejecutar un script, primero se debe dar permisos de ejecución con
+                                <code>chmod +x script.sh</code> y luego ejecutarlo con <code>./script.sh</code>.
+                            </p>
+                            <pre><code># Dar permisos de ejecución
+chmod +x script.sh
+
+# Ejecutar el script
+./script.sh
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="bash-scripts" data-aos="fade-up">
+                        <h3>3.2. Escritura de Scripts en Bash</h3>
+                        <div class="content-card">
+                            <p>
+                                La estructura de un script Bash incluye variables, parámetros y argumentos que permiten
+                                personalizar y controlar la ejecución del script.
+                            </p>
+                            <h4>Variables en Bash</h4>
+                            <p>
+                                Las variables en Bash se definen sin espacios alrededor del signo igual y se accede a
+                                ellas anteponiendo el signo dólar.
+                            </p>
+                            <pre><code># Definir y usar variables
+nombre="Matías"
+echo "Hola, $nombre"
+</code></pre>
+                            <h4>Parámetros y Argumentos</h4>
+                            <p>
+                                Los parámetros y argumentos permiten pasar información al script desde la línea de
+                                comandos.
+                            </p>
+                            <pre><code># Usar parámetros y argumentos
+#!/bin/bash
+echo "El primer argumento es $1"
+echo "El número de argumentos es $#"
+</code></pre>
+                            <h4>Ejemplo de un Script Básico de Automatización</h4>
+                            <pre><code># Script para crear un directorio y un archivo
+#!/bin/bash
+mkdir $1
+touch $1/$2
+echo "Directorio y archivo creados"
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="variables-control" data-aos="fade-up">
+                        <h3>3.3. Uso de Variables, Estructuras de Control y Funciones</h3>
+                        <div class="content-card">
+                            <p>
+                                Los scripts en Bash pueden incluir variables, estructuras de control y funciones para
+                                realizar tareas complejas.
+                            </p>
+                            <h4>Definición y Uso de Variables</h4>
+                            <pre><code># Definir y usar variables
+mensaje="Hola, mundo!"
+echo $mensaje
+</code></pre>
+                            <h4>Uso de if, else, elif</h4>
+                            <pre><code># Uso de if, else, elif
+#!/bin/bash
+if [ $1 -gt 10 ]; then
+    echo "El número es mayor que 10"
+elif [ $1 -eq 10 ]; then
+    echo "El número es igual a 10"
+else
+    echo "El número es menor que 10"
+fi
+</code></pre>
+                            <h4>Bucles for, while y until</h4>
+                            <pre><code># Uso de bucles for, while y until
+#!/bin/bash
+for i in {1..5}; do
+    echo "Número $i"
+done
+
+contador=1
+while [ $contador -le 5 ]; do
+    echo "Contador $contador"
+    ((contador++))
+done
+
+contador=1
+until [ $contador -gt 5 ]; do
+    echo "Contador $contador"
+    ((contador++))
+done
+</code></pre>
+                            <h4>Creación de Funciones en Bash</h4>
+                            <pre><code># Definir y usar funciones
+#!/bin/bash
+function saludar {
+    echo "Hola, $1!"
+}
+
+saludar "Matías"
+</code></pre>
+                            <h4>Ejemplo Práctico de un Script con Condiciones y Bucles</h4>
+                            <pre><code># Script para verificar si un archivo existe y contar líneas
+#!/bin/bash
+if [ -f $1 ]; then
+    echo "El archivo $1 existe"
+    lineas=$(wc -l < $1)
+    echo "El archivo tiene $lineas líneas"
+else
+    echo "El archivo $1 no existe"
+fi
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="config-cron" data-aos="fade-up">
+                        <h3>3.4. Tareas Programadas con Cron</h3>
+                        <div class="content-card">
+                            <p>
+                                Cron es una herramienta que permite programar la ejecución de comandos y scripts en
+                                intervalos de tiempo específicos.
+                            </p>
+                            <h4>Formato de las Tareas Programadas</h4>
+                            <p>
+                                Las tareas programadas en cron se definen en el archivo crontab con el siguiente
+                                formato:
+                            </p>
+                            <pre><code># Formato de crontab
+* * * * * comando
+# Minuto, Hora, Día del Mes, Mes, Día de la Semana
+</code></pre>
+                            <h4>Ejemplos de Configuración</h4>
+                            <pre><code># Editar crontab
+crontab -e
+
+# Ejecutar un script cada día a las 2 AM
+0 2 * * * /ruta/al/script.sh
+
+# Ejecutar un comando cada lunes a las 8 AM
+0 8 * * 1 /ruta/al/comando
+</code></pre>
+                            <h4>Administración de Tareas Programadas</h4>
+                            <pre><code># Listar tareas programadas
+crontab -l
+
+# Eliminar todas las tareas programadas
+crontab -r
+</code></pre>
+                            <h4>Seguridad y Permisos en Cron</h4>
+                            <p>
+                                Es importante configurar adecuadamente los permisos y la seguridad en cron para evitar
+                                la ejecución no autorizada de tareas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="gestion-at-batch" data-aos="fade-up">
+                        <h3>3.5. Gestión de Tareas con at y batch</h3>
+                        <div class="content-card">
+                            <p>
+                                Las herramientas <code>at</code> y <code>batch</code> permiten programar la ejecución de
+                                tareas en momentos específicos o cuando la carga del sistema es baja.
+                            </p>
+                            <h4>Uso de at</h4>
+                            <pre><code># Programar una tarea con at
+echo "comando" | at 14:00
+
+# Verificar tareas programadas
+atq
+
+# Eliminar una tarea programada
+atrm <job_id>
+</code></pre>
+                            <h4>Uso de batch</h4>
+                            <pre><code># Programar una tarea con batch
+echo "comando" | batch
+
+# Verificar tareas programadas
+atq
+</code></pre>
+                            <h4>Ejemplos Prácticos de Ejecución de Tareas con at y batch</h4>
+                            <pre><code># Programar un script para ejecutarse a las 3 PM
+echo "/ruta/al/script.sh" | at 15:00
+
+# Programar un comando para ejecutarse cuando la carga del sistema es baja
+echo "comando" | batch
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="manejo-logs" data-aos="fade-up">
+                        <h3>3.6. Manejo de Logs y Errores en Scripts</h3>
+                        <div class="content-card">
+                            <p>
+                                La redirección de salida y el manejo de logs son esenciales para monitorear y depurar
+                                scripts en Linux.
+                            </p>
+                            <h4>Redirección de Salida</h4>
+                            <pre><code># Redirigir salida estándar y errores
+comando > archivo.log
+comando >> archivo.log
+comando 2> errores.log
+comando 2>> errores.log
+</code></pre>
+                            <h4>Uso de tee</h4>
+                            <pre><code># Visualizar y registrar logs
+comando | tee archivo.log
+comando | tee -a archivo.log
+</code></pre>
+                            <h4>Creación de Registros de Ejecución con logger</h4>
+                            <pre><code># Registrar mensajes en el syslog
+logger "Mensaje de log"
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="ejemplos-practicos" data-aos="fade-up">
+                        <h3>3.7. Casos Prácticos de Automatización</h3>
+                        <div class="content-card">
+                            <p>
+                                A continuación, se presentan algunos ejemplos prácticos de scripts de automatización en
+                                Linux.
+                            </p>
+                            <h4>Script para Realizar Copias de Seguridad Automáticas</h4>
+                            <pre><code># Script para realizar copias de seguridad
+#!/bin/bash
+fecha=$(date +%Y%m%d)
+tar -czf /ruta/a/copias/backup_$fecha.tar.gz /ruta/a/directorio
+echo "Copia de seguridad realizada"
+</code></pre>
+                            <h4>Script para Monitorear el Estado del Sistema</h4>
+                            <pre><code># Script para monitorear el estado del sistema
+#!/bin/bash
+echo "Estado del sistema:"
+echo "Uptime:"
+uptime
+echo "Espacio en disco:"
+df -h
+echo "Memoria libre:"
+free -m
+</code></pre>
+                            <h4>Script para Limpiar Archivos Temporales</h4>
+                            <pre><code># Script para limpiar archivos temporales
+#!/bin/bash
+find /tmp -type f -delete
+echo "Archivos temporales eliminados"
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botón de volver al inicio -->
+            <div class="back-to-main">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="sistemas.js"></script>
+</body>
+
+</html>

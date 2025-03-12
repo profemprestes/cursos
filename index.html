@@ -1,0 +1,240 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matías Prestes | Profesor de Informática</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Menú</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <span class="category-title">2° EMS (Educación Media Superior)</span>
+                    <ul class="submenu">
+                        <li><a href="#programacion-avanzada"><i class="fas fa-code"></i> Programación Avanzada</a></li>
+                        <li><a href="#base-datos"><i class="fas fa-database"></i> Base de Datos</a></li>
+                        <li><a href="#sistemas-operativos"><i class="fab fa-windows"></i> Sistemas Operativos</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title">3° EMS</span>
+                    <ul class="submenu">
+                        <li><a href="#programacion-fullstack"><i class="fas fa-laptop-code"></i> Programación Full Stack</a></li>
+                        <li><a href="#ingenieria-software"><i class="fas fa-cogs"></i> Ingeniería de Software</a></li>
+                        <li><a href="#administracion-sistemas"><i class="fas fa-server"></i> Administración de Sistemas</a></li>
+                        <li><a href="#proyecto-utulab"><i class="fas fa-project-diagram"></i> Proyecto Utulab</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Sección principal (Hero) -->
+            <section class="hero-section">
+                <div id="particles-js"></div>
+                <div class="hero-content" data-aos="fade-up">
+                    <div class="profile-image-container">
+                        <div class="profile-image">
+                            <img src="https://profematiasprestes.misitioweb.com.uy/img/logos/logofinal3.webp" alt="Matías Prestes" />
+                            <span class="alt-text">Matías Prestes</span>
+                        </div>
+                    </div>
+                    <h1 id="typing-title"></h1>
+                    <p class="welcome-text">
+                        Bienvenido a mi sitio web educativo. Aquí encontrarás recursos, material de estudio y 
+                        herramientas para apoyar tu aprendizaje en las áreas de informática y tecnología.
+                    </p>
+                    <div class="tech-icons">
+                        <i class="fab fa-html5" title="HTML5"></i>
+                        <i class="fab fa-css3-alt" title="CSS3"></i>
+                        <i class="fab fa-js-square" title="JavaScript"></i>
+                        <i class="fab fa-php" title="PHP"></i>
+                        <i class="fab fa-java" title="Java"></i>
+                        <i class="fab fa-linux" title="Linux"></i>
+                        <i class="fas fa-database" title="SQL"></i>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://profematiasprestes.x10.mx/" target="_blank" title="Sitio Web">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@MATIASPRESTES-jc9hz" target="_blank" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://uy.linkedin.com/in/mprestestecnologia" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección de cursos -->
+            <section id="cursos" class="courses-section">
+                <h2 class="section-title" data-aos="fade-up">Nuestros Cursos</h2>
+                
+                <!-- 2° EMS -->
+                <div class="course-level" data-aos="fade-up">
+                    <h3 class="level-title">2° EMS (Educación Media Superior)</h3>
+                    <div class="courses-container">
+                        <!-- Programación Avanzada -->
+                        <div class="course-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="course-image">
+                                <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Programación Avanzada">
+                                <span class="course-badge">2° EMS</span>
+                            </div>
+                            <div class="course-header">
+                                <i class="fas fa-code course-icon"></i>
+                                <h4 class="course-title">Programación Avanzada</h4>
+                            </div>
+                            <div class="course-content">
+                                <p class="course-description">
+                                    Aprende conceptos avanzados de programación, algoritmos, estructuras de datos 
+                                    y patrones de diseño para desarrollar aplicaciones eficientes.
+                                </p>
+                                <a href="programacionavanzada.html" class="course-link">Ver curso</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Base de Datos -->
+                        <div class="course-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="course-image">
+                                <img src="https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Base de Datos">
+                                <span class="course-badge">2° EMS</span>
+                            </div>
+                            <div class="course-header">
+                                <i class="fas fa-database course-icon"></i>
+                                <h4 class="course-title">Base de Datos</h4>
+                            </div>
+                            <div class="course-content">
+                                <p class="course-description">
+                                    Descubre cómo diseñar, implementar y gestionar bases de datos relacionales, 
+                                    dominando SQL y los principios de normalización.
+                                </p>
+                                <a href="basededatos.html" class="course-link">Ver curso</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Sistemas Operativos -->
+                        <div class="course-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="course-image">
+                                <img src="https://images.unsplash.com/photo-1629654291663-b91ad427698f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sistemas Operativos">
+                                <span class="course-badge">2° EMS</span>
+                            </div>
+                            <div class="course-header">
+                                <i class="fab fa-linux course-icon"></i>
+                                <h4 class="course-title">Sistemas Operativos</h4>
+                            </div>
+                            <div class="course-content">
+                                <p class="course-description">
+                                    Explora los fundamentos de los sistemas operativos modernos, sus componentes, 
+                                    gestión de procesos y recursos del sistema.
+                                </p>
+                                <a href="sistemasoperativos.html" class="course-link">Ver curso</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3° EMS -->
+                <div class="course-level" data-aos="fade-up">
+                    <h3 class="level-title">3° EMS</h3>
+                    <div class="courses-container">
+                        <!-- Programación Full Stack -->
+                        <div class="course-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="course-image">
+                                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Programación Full Stack">
+                                <span class="course-badge">3° EMS</span>
+                            </div>
+                            <div class="course-header">
+                                <i class="fas fa-laptop-code course-icon"></i>
+                                <h4 class="course-title">Programación Full Stack</h4>
+                            </div>
+                            <div class="course-content">
+                                <p class="course-description">
+                                    Desarrolla habilidades tanto en el frontend como en el backend para crear 
+                                    aplicaciones web completas y dinámicas.
+                                </p>
+                                <a href="programacionfullstack.html" class="course-link">Ver curso</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Ingeniería de Software -->
+                        <div class="course-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="course-image">
+                                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Ingeniería de Software">
+                                <span class="course-badge">3° EMS</span>
+                            </div>
+                            <div class="course-header">
+                                <i class="fas fa-cogs course-icon"></i>
+                                <h4 class="course-title">Ingeniería de Software</h4>
+                            </div>
+                            <div class="course-content">
+                                <p class="course-description">
+                                    Aprende metodologías, técnicas y buenas prácticas para el desarrollo 
+                                    de software de calidad y la gestión eficiente de proyectos.
+                                </p>
+                                <a href="ingenieriasoftware.html" class="course-link">Ver curso</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Administración de Sistemas -->
+                        <div class="course-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="course-image">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Administración de Sistemas">
+                                <span class="course-badge">3° EMS</span>
+                            </div>
+                            <div class="course-header">
+                                <i class="fas fa-server course-icon"></i>
+                                <h4 class="course-title">Administración de Sistemas</h4>
+                            </div>
+                            <div class="course-content">
+                                <p class="course-description">
+                                    Domina la configuración, mantenimiento y optimización de sistemas 
+                                    informáticos y redes en entornos empresariales.
+                                </p>
+                                <a href="administracionsistemas.html" class="course-link">Ver curso</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Proyecto Utulab -->
+                        <div class="course-card" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="course-image">
+                                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Proyecto Utulab">
+                                <span class="course-badge">3° EMS</span>
+                            </div>
+                            <div class="course-header">
+                                <i class="fas fa-project-diagram course-icon"></i>
+                                <h4 class="course-title">Proyecto Utulab</h4>
+                            </div>
+                            <div class="course-content">
+                                <p class="course-description">
+                                    Desarrolla un proyecto integral aplicando todos los conocimientos 
+                                    adquiridos durante tu formación académica.
+                                </p>
+                                <a href="proyectoutulab.html" class="course-link">Ver curso</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

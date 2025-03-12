@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería de Software | Matías Prestes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="sistemas.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Esquema</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-book"></i> 1. Fundamentos de Ingeniería de Software</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-info-circle"></i> 1.1. Introducción</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#definicion-is"><i class="fas fa-quote-right"></i> 1.1.1. Definición y Objetivos</a></li>
+                                <li><a href="#evolucion-is"><i class="fas fa-history"></i> 1.1.2. Evolución Histórica</a></li>
+                                <li><a href="#retos-is"><i class="fas fa-mountain"></i> 1.1.3. Desafíos Actuales</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-cubes"></i> 1.2. Ciclo de Vida del Software</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#modelos-desarrollo"><i class="fas fa-project-diagram"></i> 1.2.1. Modelos de Desarrollo</a></li>
+                                <li><a href="#modelo-cascada"><i class="fas fa-water"></i> 1.2.2. Modelo en Cascada</a></li>
+                                <li><a href="#modelo-espiral"><i class="fas fa-sync-alt"></i> 1.2.3. Modelo en Espiral</a></li>
+                                <li><a href="#metodos-agiles"><i class="fas fa-bolt"></i> 1.2.4. Métodos Ágiles</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-clipboard-list"></i> 2. Ingeniería de Requisitos</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-search"></i> 2.1. Proceso de Requisitos</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#elicitacion"><i class="fas fa-comments"></i> 2.1.1. Elicitación</a></li>
+                                <li><a href="#analisis-requisitos"><i class="fas fa-tasks"></i> 2.1.2. Análisis</a></li>
+                                <li><a href="#especificacion-requisitos"><i class="fas fa-file-alt"></i> 2.1.3. Especificación</a></li>
+                                <li><a href="#validacion-requisitos"><i class="fas fa-check-circle"></i> 2.1.4. Validación</a></li>
+                                <li><a href="#gestion-requisitos"><i class="fas fa-cogs"></i> 2.1.5. Gestión</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-list-ul"></i> 2.2. Tipos de Requisitos</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#requisitos-funcionales"><i class="fas fa-cog"></i> 2.2.1. Requisitos Funcionales</a></li>
+                                <li><a href="#requisitos-no-funcionales"><i class="fas fa-shield-alt"></i> 2.2.2. Requisitos No Funcionales</a></li>
+                                <li><a href="#requisitos-usuario"><i class="fas fa-user"></i> 2.2.3. Requisitos de Usuario</a></li>
+                                <li><a href="#requisitos-sistema"><i class="fas fa-laptop"></i> 2.2.4. Requisitos de Sistema</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-pencil-ruler"></i> 3. Diseño y Construcción</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-sitemap"></i> 3.1. Diseño de Software</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#principios-diseno"><i class="fas fa-th-large"></i> 3.1.1. Principios de Diseño</a></li>
+                                <li><a href="#diseno-arquitectonico"><i class="fas fa-building"></i> 3.1.2. Diseño Arquitectónico</a></li>
+                                <li><a href="#patrones-diseno"><i class="fas fa-puzzle-piece"></i> 3.1.3. Patrones de Diseño</a></li>
+                                <li><a href="#uml"><i class="fas fa-project-diagram"></i> 3.1.4. UML</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#estandares-codigo"><i class="fas fa-code"></i> 3.2. Estándares de Código</a></li>
+                        <li><a href="#refactorizacion"><i class="fas fa-broom"></i> 3.3. Refactorización</a></li>
+                        <li><a href="#calidad-codigo"><i class="fas fa-medal"></i> 3.4. Calidad de Código</a></li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-vial"></i> 4. Pruebas y Calidad</span>
+                    <ul class="submenu">
+                        <li><a href="#estrategias-pruebas"><i class="fas fa-chess"></i> 4.1. Estrategias de Pruebas</a></li>
+                        <li><a href="#niveles-pruebas"><i class="fas fa-layer-group"></i> 4.2. Niveles de Pruebas</a></li>
+                        <li><a href="#tipos-pruebas"><i class="fas fa-list-ol"></i> 4.3. Tipos de Pruebas</a></li>
+                        <li><a href="#herramientas-pruebas"><i class="fas fa-tools"></i> 4.4. Herramientas de Pruebas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Sección de Cabecera -->
+            <section class="course-header-section">
+                <div id="particles-js"></div>
+                <div class="course-header-content" data-aos="fade-up">
+                    <h1>Ingeniería de Software</h1>
+                    <div class="course-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <p class="course-description">
+                        Bienvenido al curso de Ingeniería de Software. Aprenderás metodologías, técnicas y buenas 
+                        prácticas para el desarrollo de software de calidad y la gestión eficiente de proyectos.
+                        Desde la ingeniería de requisitos hasta las pruebas y mantenimiento, obtendrás una visión 
+                        completa del ciclo de vida del desarrollo de software.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Contenido del Curso -->
+            <section class="course-content-section">
+                <div class="course-container">
+                    <!-- Unidad 1: Fundamentos -->
+                    <div class="content-unit" id="definicion-is" data-aos="fade-up">
+                        <h2>1. Fundamentos de Ingeniería de Software</h2>
+                        <h3>1.1. Introducción</h3>
+                        <h4>1.1.1. Definición y Objetivos</h4>
+                        
+                        <div class="content-card">
+                            <p>
+                                La Ingeniería de Software es una disciplina de la ingeniería que comprende todos los aspectos 
+                                de la producción de software, desde las etapas iniciales de la especificación del sistema hasta 
+                                su mantenimiento cuando ya está siendo utilizado.
+                            </p>
+                            <p>
+                                Los principales objetivos de la Ingeniería de Software son:
+                            </p>
+                            <ul>
+                                <li><strong>Calidad:</strong> Desarrollar software que cumpla con los requisitos especificados y sea confiable.</li>
+                                <li><strong>Eficiencia:</strong> Optimizar el uso de recursos humanos, tiempo y presupuesto en el desarrollo.</li>
+                                <li><strong>Escalabilidad:</strong> Crear sistemas que puedan crecer y adaptarse a nuevas necesidades.</li>
+                                <li><strong>Mantenibilidad:</strong> Facilitar la corrección de errores y la implementación de cambios.</li>
+                                <li><strong>Usabilidad:</strong> Asegurar que el software sea fácil de usar para los usuarios finales.</li>
+                            </ul>
+                            <p>
+                                A diferencia de la programación tradicional, la ingeniería de software se enfoca en aplicar 
+                                principios de ingeniería al desarrollo de software, siguiendo un enfoque sistemático, disciplinado 
+                                y cuantificable para crear, operar y mantener soluciones de software.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Más contenido sería añadido aquí para otras secciones -->
+                    
+                </div>
+            </section>
+            
+            <!-- Botón de volver al inicio -->
+            <div class="back-to-main">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="sistemas.js"></script>
+</body>
+</html>

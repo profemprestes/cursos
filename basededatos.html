@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos | Matías Prestes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="sistemas.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Esquema</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-database"></i> 1. Fundamentos de Bases de Datos</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-layer-group"></i> 1.1. Conceptos Básicos</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#definicion-db"><i class="fas fa-info-circle"></i> 1.1.1. Definición y Tipos de Bases de Datos</a></li>
+                                <li><a href="#modelos-datos"><i class="fas fa-project-diagram"></i> 1.1.2. Modelos de Datos</a></li>
+                                <li><a href="#sistemas-gestores"><i class="fas fa-server"></i> 1.1.3. Sistemas Gestores de Bases de Datos</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-sitemap"></i> 1.2. Diseño de Bases de Datos</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#modelo-er"><i class="fas fa-project-diagram"></i> 1.2.1. Modelo Entidad-Relación</a></li>
+                                <li><a href="#normalizacion"><i class="fas fa-check-square"></i> 1.2.2. Normalización</a></li>
+                                <li><a href="#diagramas-db"><i class="fas fa-chart-bar"></i> 1.2.3. Diagramas de Bases de Datos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-code"></i> 2. SQL y Consultas</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-table"></i> 2.1. SQL Básico</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#ddl"><i class="fas fa-tools"></i> 2.1.1. DDL (Data Definition Language)</a></li>
+                                <li><a href="#dml"><i class="fas fa-edit"></i> 2.1.2. DML (Data Manipulation Language)</a></li>
+                                <li><a href="#dql"><i class="fas fa-search"></i> 2.1.3. DQL (Data Query Language)</a></li>
+                                <li><a href="#dcl"><i class="fas fa-user-shield"></i> 2.1.4. DCL (Data Control Language)</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-search"></i> 2.2. Consultas Avanzadas</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#joins"><i class="fas fa-link"></i> 2.2.1. Joins</a></li>
+                                <li><a href="#subconsultas"><i class="fas fa-layer-group"></i> 2.2.2. Subconsultas</a></li>
+                                <li><a href="#funciones-agregacion"><i class="fas fa-calculator"></i> 2.2.3. Funciones de Agregación</a></li>
+                                <li><a href="#vistas"><i class="fas fa-glasses"></i> 2.2.4. Vistas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-cogs"></i> 3. Implementación y Administración</span>
+                    <ul class="submenu">
+                        <li><a href="#transacciones"><i class="fas fa-exchange-alt"></i> 3.1. Transacciones y Control de Concurrencia</a></li>
+                        <li><a href="#indices"><i class="fas fa-sort-amount-up"></i> 3.2. Índices y Optimización</a></li>
+                        <li><a href="#seguridad-db"><i class="fas fa-shield-alt"></i> 3.3. Seguridad en Bases de Datos</a></li>
+                        <li><a href="#respaldo-recuperacion"><i class="fas fa-undo"></i> 3.4. Respaldo y Recuperación</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Sección de Cabecera -->
+            <section class="course-header-section">
+                <div id="particles-js"></div>
+                <div class="course-header-content" data-aos="fade-up">
+                    <h1>Base de Datos</h1>
+                    <div class="course-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <p class="course-description">
+                        Bienvenido al curso de Base de Datos. Aprenderás a diseñar, implementar y gestionar bases de 
+                        datos relacionales, dominar SQL y entender los principios fundamentales de normalización y 
+                        optimización para desarrollar sistemas eficientes de almacenamiento y recuperación de información.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Contenido del Curso -->
+            <section class="course-content-section">
+                <div class="course-container">
+                    <!-- Unidad 1: Fundamentos -->
+                    <div class="content-unit" id="definicion-db" data-aos="fade-up">
+                        <h2>1. Fundamentos de Bases de Datos</h2>
+                        <h3>1.1. Conceptos Básicos</h3>
+                        <h4>1.1.1. Definición y Tipos de Bases de Datos</h4>
+                        
+                        <div class="content-card">
+                            <p>
+                                Una base de datos es un conjunto organizado de datos estructurados, almacenados sistemáticamente 
+                                para su posterior uso. El objetivo principal de una base de datos es proporcionar una forma eficiente 
+                                de almacenar, recuperar y gestionar datos.
+                            </p>
+                            <p>
+                                Las bases de datos se pueden clasificar en varios tipos según su modelo de datos:
+                            </p>
+                            <ul>
+                                <li><strong>Bases de datos relacionales:</strong> Organizan los datos en tablas relacionadas mediante claves. Ejemplos: MySQL, PostgreSQL, Oracle.</li>
+                                <li><strong>Bases de datos NoSQL:</strong> Diseñadas para modelos de datos específicos con esquemas flexibles. Ejemplos: MongoDB, Cassandra, Redis.</li>
+                                <li><strong>Bases de datos orientadas a objetos:</strong> Almacenan datos como objetos. Ejemplos: db4o, ObjectDB.</li>
+                                <li><strong>Bases de datos jerárquicas:</strong> Organizan los datos en una estructura similar a un árbol. Ejemplo: IBM IMS.</li>
+                                <li><strong>Bases de datos de red:</strong> Permiten relaciones muchos a muchos. Ejemplo: IDMS.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </section>
+            
+            <!-- Botón de volver al inicio -->
+            <div class="back-to-main">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="sistemas.js"></script>
+</body>
+</html>

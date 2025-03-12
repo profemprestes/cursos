@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación Full Stack | Matías Prestes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="sistemas.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Esquema</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-laptop-code"></i> 1. Desarrollo Front-End</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fab fa-html5"></i> 1.1. HTML5 Avanzado</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#semantica-html5"><i class="fas fa-sitemap"></i> 1.1.1. Semántica HTML5</a></li>
+                                <li><a href="#formularios-html5"><i class="fas fa-clipboard-list"></i> 1.1.2. Formularios y Validación</a></li>
+                                <li><a href="#multimedia-html5"><i class="fas fa-film"></i> 1.1.3. Audio, Video y Canvas</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fab fa-css3-alt"></i> 1.2. CSS3 Avanzado</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#flexbox"><i class="fas fa-th"></i> 1.2.1. Flexbox</a></li>
+                                <li><a href="#css-grid"><i class="fas fa-border-all"></i> 1.2.2. CSS Grid</a></li>
+                                <li><a href="#css-animaciones"><i class="fas fa-meteor"></i> 1.2.3. Transiciones y Animaciones</a></li>
+                                <li><a href="#css-variables"><i class="fas fa-grip-vertical"></i> 1.2.4. Variables CSS y Preprocesadores</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fab fa-js"></i> 1.3. JavaScript Avanzado</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#es6-features"><i class="fas fa-code"></i> 1.3.1. Características ES6+</a></li>
+                                <li><a href="#dom-manipulation"><i class="fas fa-sitemap"></i> 1.3.2. Manipulación del DOM</a></li>
+                                <li><a href="#js-async"><i class="fas fa-sync-alt"></i> 1.3.3. Programación Asíncrona</a></li>
+                                <li><a href="#frameworks"><i class="fab fa-react"></i> 1.3.4. Frameworks y Librerías</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-server"></i> 2. Desarrollo Back-End</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fab fa-node-js"></i> 2.1. NodeJS</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#nodejs-intro"><i class="fas fa-play-circle"></i> 2.1.1. Introducción a NodeJS</a></li>
+                                <li><a href="#express-framework"><i class="fas fa-route"></i> 2.1.2. Express Framework</a></li>
+                                <li><a href="#nodejs-apis"><i class="fas fa-exchange-alt"></i> 2.1.3. Creación de APIs RESTful</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-database"></i> 2.2. Bases de Datos</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#mongodb"><i class="fas fa-leaf"></i> 2.2.1. MongoDB</a></li>
+                                <li><a href="#sql-databases"><i class="fas fa-table"></i> 2.2.2. Bases de Datos SQL</a></li>
+                                <li><a href="#orm"><i class="fas fa-object-group"></i> 2.2.3. ORM y ODM</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-shield-alt"></i> 2.3. Seguridad y Autenticación</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#auth-strategies"><i class="fas fa-key"></i> 2.3.1. Estrategias de Autenticación</a></li>
+                                <li><a href="#jwt"><i class="fas fa-id-card"></i> 2.3.2. JSON Web Tokens</a></li>
+                                <li><a href="#security-best-practices"><i class="fas fa-lock"></i> 2.3.3. Buenas Prácticas de Seguridad</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-tools"></i> 3. Herramientas y Despliegue</span>
+                    <ul class="submenu">
+                        <li><a href="#git-github"><i class="fab fa-git-alt"></i> 3.1. Git y GitHub</a></li>
+                        <li><a href="#webpack"><i class="fas fa-box-open"></i> 3.2. Webpack y Herramientas de Build</a></li>
+                        <li><a href="#testing"><i class="fas fa-vial"></i> 3.3. Testing (Jest, Mocha)</a></li>
+                        <li><a href="#docker"><i class="fab fa-docker"></i> 3.4. Docker y Contenedores</a></li>
+                        <li><a href="#cloud-deployment"><i class="fas fa-cloud-upload-alt"></i> 3.5. Despliegue en la Nube</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Sección de Cabecera -->
+            <section class="course-header-section">
+                <div id="particles-js"></div>
+                <div class="course-header-content" data-aos="fade-up">
+                    <h1>Programación Full Stack</h1>
+                    <div class="course-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <p class="course-description">
+                        Bienvenido al curso de Programación Full Stack. Aprenderás a desarrollar aplicaciones web 
+                        completas dominando tanto el front-end como el back-end. Desde HTML, CSS y JavaScript hasta 
+                        bases de datos, APIs y despliegue en la nube, este curso te preparará para crear soluciones 
+                        web modernas y escalables.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Contenido del Curso -->
+            <section class="course-content-section">
+                <div class="course-container">
+                    <!-- Unidad 1: Fundamentos -->
+                    <div class="content-unit" id="semantica-html5" data-aos="fade-up">
+                        <h2>1. Desarrollo Front-End</h2>
+                        <h3>1.1. HTML5 Avanzado</h3>
+                        <h4>1.1.1. Semántica HTML5</h4>
+                        
+                        <div class="content-card">
+                            <p>
+                                HTML5 introdujo nuevos elementos semánticos que permiten estructurar el contenido de una página 
+                                web de manera más significativa y descriptiva. Estos elementos ayudan a los navegadores, motores 
+                                de búsqueda y tecnologías de asistencia a entender mejor el contenido.
+                            </p>
+                            <p>
+                                Algunos de los elementos semánticos más importantes son:
+                            </p>
+                            <ul>
+                                <li><strong>&lt;header&gt;:</strong> Define la cabecera de un documento o sección.</li>
+                                <li><strong>&lt;nav&gt;:</strong> Define un contenedor para enlaces de navegación.</li>
+                                <li><strong>&lt;main&gt;:</strong> Especifica el contenido principal del documento.</li>
+                                <li><strong>&lt;article&gt;:</strong> Define contenido independiente que podría existir por sí mismo.</li>
+                                <li><strong>&lt;section&gt;:</strong> Define una sección en un documento.</li>
+                                <li><strong>&lt;aside&gt;:</strong> Define contenido relacionado indirectamente con el contenido principal.</li>
+                                <li><strong>&lt;footer&gt;:</strong> Define el pie de página de un documento o sección.</li>
+                            </ul>
+                            <p>
+                                El uso adecuado de estos elementos mejora la accesibilidad web, optimiza el SEO y 
+                                hace que el código sea más fácil de mantener y entender.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Más contenido sería añadido aquí para otras secciones -->
+                    
+                </div>
+            </section>
+            
+            <!-- Botón de volver al inicio -->
+            <div class="back-to-main">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="sistemas.js"></script>
+</body>
+</html>

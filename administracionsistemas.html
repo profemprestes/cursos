@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Sistemas | Matías Prestes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="sistemas.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Esquema</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-server"></i> 1. Fundamentos de Administración de Sistemas</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-sitemap"></i> 1.1. Infraestructura TI</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#componentes-infra"><i class="fas fa-microchip"></i> 1.1.1. Componentes de la Infraestructura</a></li>
+                                <li><a href="#arquitecturas-sistemas"><i class="fas fa-building"></i> 1.1.2. Arquitecturas de Sistemas</a></li>
+                                <li><a href="#cloud-computing"><i class="fas fa-cloud"></i> 1.1.3. Cloud Computing</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fab fa-windows"></i> 1.2. Sistemas Operativos</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#windows-server"><i class="fab fa-windows"></i> 1.2.1. Windows Server</a></li>
+                                <li><a href="#linux-server"><i class="fab fa-linux"></i> 1.2.2. Distribuciones Linux para Servidores</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-network-wired"></i> 2. Redes y Conectividad</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-project-diagram"></i> 2.1. Redes de Computadoras</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#fundamentos-redes"><i class="fas fa-info-circle"></i> 2.1.1. Fundamentos de Redes</a></li>
+                                <li><a href="#modelos-redes"><i class="fas fa-layer-group"></i> 2.1.2. Modelos OSI y TCP/IP</a></li>
+                                <li><a href="#protocolos-redes"><i class="fas fa-exchange-alt"></i> 2.1.3. Protocolos de Red</a></li>
+                                <li><a href="#dispositivos-redes"><i class="fas fa-hdd"></i> 2.1.4. Dispositivos de Red</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-wifi"></i> 2.2. Configuración de Red</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#direccionamiento-ip"><i class="fas fa-map-marker-alt"></i> 2.2.1. Direccionamiento IP</a></li>
+                                <li><a href="#dhcp-dns"><i class="fas fa-server"></i> 2.2.2. DHCP y DNS</a></li>
+                                <li><a href="#enrutamiento"><i class="fas fa-route"></i> 2.2.3. Enrutamiento</a></li>
+                                <li><a href="#vpn"><i class="fas fa-shield-alt"></i> 2.2.4. VPN</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-shield-alt"></i> 3. Seguridad y Monitorización</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-lock"></i> 3.1. Seguridad Informática</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#principios-seguridad"><i class="fas fa-check-double"></i> 3.1.1. Principios de Seguridad</a></li>
+                                <li><a href="#firewalls"><i class="fas fa-fire"></i> 3.1.2. Firewalls</a></li>
+                                <li><a href="#autenticacion"><i class="fas fa-key"></i> 3.1.3. Autenticación y Control de Acceso</a></li>
+                                <li><a href="#encriptacion"><i class="fas fa-lock"></i> 3.1.4. Encriptación y Certificados</a></li>
+                                <li><a href="#hardening"><i class="fas fa-shield-alt"></i> 3.1.5. Hardening de Sistemas</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-chart-line"></i> 3.2. Monitorización y Gestión</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#herramientas-monitoreo"><i class="fas fa-tachometer-alt"></i> 3.2.1. Herramientas de Monitoreo</a></li>
+                                <li><a href="#logs-auditoria"><i class="fas fa-clipboard-list"></i> 3.2.2. Logs y Auditoría</a></li>
+                                <li><a href="#notificaciones-alertas"><i class="fas fa-bell"></i> 3.2.3. Notificaciones y Alertas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-hdd"></i> 4. Servicios y Aplicaciones</span>
+                    <ul class="submenu">
+                        <li><a href="#web-servers"><i class="fas fa-globe"></i> 4.1. Servidores Web (Apache, Nginx)</a></li>
+                        <li><a href="#mail-servers"><i class="fas fa-envelope"></i> 4.2. Servidores de Correo</a></li>
+                        <li><a href="#db-servers"><i class="fas fa-database"></i> 4.3. Servidores de Bases de Datos</a></li>
+                        <li><a href="#file-servers"><i class="fas fa-folder"></i> 4.4. Servidores de Archivos</a></li>
+                        <li><a href="#virtualizacion"><i class="fas fa-copy"></i> 4.5. Virtualización y Contenedores</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Sección de Cabecera -->
+            <section class="course-header-section">
+                <div id="particles-js"></div>
+                <div class="course-header-content" data-aos="fade-up">
+                    <h1>Administración de Sistemas</h1>
+                    <div class="course-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <p class="course-description">
+                        Bienvenido al curso de Administración de Sistemas. Aprenderás a configurar, mantener y 
+                        optimizar infraestructuras informáticas, incluyendo servidores, redes, servicios y 
+                        aspectos de seguridad. Este curso te proporcionará las habilidades necesarias para gestionar 
+                        eficientemente entornos TI empresariales.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Contenido del Curso -->
+            <section class="course-content-section">
+                <div class="course-container">
+                    <!-- Unidad 1: Fundamentos -->
+                    <div class="content-unit" id="componentes-infra" data-aos="fade-up">
+                        <h2>1. Fundamentos de Administración de Sistemas</h2>
+                        <h3>1.1. Infraestructura TI</h3>
+                        <h4>1.1.1. Componentes de la Infraestructura</h4>
+                        
+                        <div class="content-card">
+                            <p>
+                                La infraestructura de TI es el conjunto de hardware, software, redes, instalaciones y servicios 
+                                relacionados necesarios para desarrollar, probar, entregar, monitorear, controlar y dar soporte 
+                                a los servicios de TI. Los componentes principales de una infraestructura de TI incluyen:
+                            </p>
+                            <ul>
+                                <li><strong>Hardware:</strong> Servidores, ordenadores, dispositivos de almacenamiento, equipos de red, etc.</li>
+                                <li><strong>Software:</strong> Sistemas operativos, aplicaciones, middleware, software de virtualización, etc.</li>
+                                <li><strong>Redes:</strong> Infraestructura de comunicaciones, enrutadores, conmutadores, cortafuegos, etc.</li>
+                                <li><strong>Almacenamiento:</strong> Soluciones de almacenamiento como SAN, NAS, almacenamiento en la nube, etc.</li>
+                                <li><strong>Seguridad:</strong> Sistemas de protección, copias de seguridad, recuperación ante desastres, etc.</li>
+                                <li><strong>Instalaciones:</strong> Centros de datos, sistemas de energía, refrigeración, etc.</li>
+                                <li><strong>Personal:</strong> Recursos humanos especializados en la gestión y mantenimiento de la infraestructura.</li>
+                            </ul>
+                            <p>
+                                Una infraestructura de TI bien diseñada y gestionada es fundamental para garantizar la 
+                                disponibilidad, rendimiento, escalabilidad y seguridad de los servicios tecnológicos de una organización.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Más contenido sería añadido aquí para otras secciones -->
+                    
+                </div>
+            </section>
+            
+            <!-- Botón de volver al inicio -->
+            <div class="back-to-main">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="sistemas.js"></script>
+</body>
+</html>

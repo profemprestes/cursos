@@ -10,10 +10,12 @@
 <body>
     <!-- Contenedor principal -->
     <div class="container">
+        <!-- Overlay -->
+        <div id="overlay" class="overlay"></div>
         <!-- Navegación lateral -->
         <nav class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h3>Menú</h3>
+                <h3>Matias Prestes</h3>
                 <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
             </div>
             <ul class="sidebar-menu">
@@ -236,5 +238,28 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const toggleMenu = document.getElementById('toggle-menu');
+            const closeMenu = document.getElementById('close-menu');
+
+            toggleMenu.addEventListener('click', function() {
+                sidebar.classList.add('active');
+                overlay.classList.add('active');
+            });
+
+            closeMenu.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+
+            overlay.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

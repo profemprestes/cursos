@@ -190,6 +190,12 @@ ul {
     padding-left: calc(2.8rem - 3px);
 }
 
+.sidebar-footer {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 /* Contenido principal */
 .main-content {
     flex: 1;

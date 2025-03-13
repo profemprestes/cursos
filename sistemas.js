@@ -204,4 +204,15 @@ document.addEventListener('DOMContentLoaded', function() {
         window.pJSDom[0].pJS.particles.line_linked.color = particlesColor;
         window.pJSDom[0].pJS.fn.particlesRefresh();
     });
+
+    // Mostrar el botón de volver al principio al hacer scroll
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
 });

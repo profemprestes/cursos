@@ -495,6 +495,37 @@ h5 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: none;
+    z-index: 999;
+}
+
+.back-to-top-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.back-to-top-button i {
+    margin-right: 8px;
+}
+
+.back-to-top-button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 /* Media Queries */
 @media (max-width: 992px) {
     .sidebar {

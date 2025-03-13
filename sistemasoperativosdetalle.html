@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Operativos Linux | Matías Prestes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="sistemas2.css">
+    <style>
+        .content-unit {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .content-unit:hover {
+            transform: translateY(-10px);
+        }
+        .content-unit h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .content-unit p {
+            font-size: 1em;
+            color: #666;
+        }
+        .content-unit i {
+            font-size: 2em;
+            color: #007bff;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-footer">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+            <div class="sidebar-header">
+                <h3>Sistemas Operativos</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <a href="sistemasoperativosunidad1.html"><i class="fas fa-book"></i>
+                    <span class="category-title">Fundamentos de Linux</span></a>
+                </li>
+                <li class="menu-category">
+                    <a href="sistemasoperativosunidad2.html"><i class="fas fa-laptop-code"></i>
+                    <span class="category-title">Permisos y Propiedades</span></a>
+                </li>
+                <li class="menu-category">
+                    <a href="sistemasoperativosunidad3.html"><i class="fas fa-server"></i>
+                    <span class="category-title">Automatización y
+                        Scripts</span></a>
+                </li>
+            </ul>
+           
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Botón de volver al principio -->
+            <div class="back-to-top" id="back-to-top">
+                <a href="#" class="back-to-top-button"><i class="fas fa-arrow-up"></i> Volver al principio</a>
+            </div>
+
+            <!-- Sección de Cabecera -->
+            <section class="course-header-section">
+                <div id="particles-js"></div>
+                <div class="course-header-content" data-aos="fade-up">
+                    <h1>Sistemas Operativos Linux</h1>
+                    <div class="course-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <p class="course-description">
+                        Bienvenido al curso de Sistemas Operativos Linux. En este curso aprenderás los fundamentos
+                        del sistema operativo Linux, desde su instalación y configuración hasta la administración
+                        avanzada de usuarios, permisos y automatización de tareas mediante scripts.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Materiales Recomendados -->
+            <section class="recommended-materials-section" data-aos="fade-up">
+                <div class="course-container">
+                    <h2>Materiales Recomendados</h2>
+                    <div class="recommended-materials-list">
+                        <div class="material-card" data-aos="fade-right">
+                            <i class="fas fa-book"></i>
+                            <a href="https://www.fultus.com" target="_blank">Garrels, M. (2010). Bash Guide for
+                                Beginners. Fultus Corporation.</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="100">
+                            <i class="fas fa-globe"></i>
+                            <a href="https://www.gnu.org/gnu/thegnuproject.es.html" target="_blank">GNU (2013). El
+                                proyecto GNU. https://www.gnu.org/gnu/thegnuproject.es.html</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="200">
+                            <i class="fas fa-book-open"></i>
+                            <a href="https://www.pearson.com" target="_blank">Tanenbaum, A. S. (2003). Sistemas
+                                operativos modernos. Pearson Educación.</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="300">
+                            <i class="fas fa-laptop-code"></i>
+                            <a href="https://www.ucm.es" target="_blank">Velasco, S. (2008). Creación de scripts en
+                                Linux. Universidad Complutense de Madrid.</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Contenido del Curso -->
+            <section class="course-content-section">
+                <div class="course-container">
+                    <div class="grid-container">
+                        <!-- Unidad 1: Fundamentos -->
+                        <div class="content-card" id="historia-unix-linux" data-aos="fade-up">
+                            <div class="card-image">
+                                <img src="img/noticias/linux3.png" alt="Unidad 1" loading="lazy" width="300" height="200">
+                                <div class="card-label">Unidad 1</div>
+                            </div>
+                            <i class="fas fa-book"></i>
+                            <h2>Fundamentos del Sistema Operativo Linux</h2>
+                            <p>Aprende los conceptos básicos y la historia detrás de Linux y Unix. Esta unidad cubre la evolución de los sistemas operativos y la importancia de Linux en el mundo moderno.</p>
+                            <button class="enter-unit-button" onclick="location.href='sistemasoperativosunidad1.html'">Entrar a Unidad 1</button>
+                        </div>
+
+                        <!-- Unidad 2: Permisos y Propiedades en Linux -->
+                        <div class="content-card" id="procesos-recursos" data-aos="fade-up">
+                            <div class="card-image">
+                                <img src="img/noticias/linux3.png" alt="Unidad 2" loading="lazy" width="300" height="200">
+                                <div class="card-label">Unidad 2</div>
+                            </div>
+                            <i class="fas fa-lock"></i>
+                            <h2>Permisos y Propiedades en Linux</h2>
+                            <p>Descubre cómo gestionar permisos y propiedades de archivos y directorios en Linux. Aprende a utilizar comandos para cambiar permisos y a entender la seguridad del sistema.</p>
+                            <button class="enter-unit-button" onclick="location.href='sistemasoperativosunidad2.html'">Entrar a Unidad 2</button>
+                        </div>
+
+                        <!-- Unidad 3: Automatización de Tareas y Scripts en Linux -->
+                        <div class="content-card" id="shell-script" data-aos="fade-up">
+                            <div class="card-image">
+                                <img src="img/noticias/linux3.png" alt="Unidad 3" loading="lazy" width="300" height="200">
+                                <div class="card-label">Unidad 3</div>
+                            </div>
+                            <i class="fas fa-tasks"></i>
+                            <h2>Automatización de Tareas y Scripts en Linux</h2>
+                            <p>Aprende a automatizar tareas repetitivas y a crear scripts eficientes en Linux. Esta unidad te enseñará a escribir scripts en Bash y a programar tareas automáticas.</p>
+                            <button class="enter-unit-button" onclick="location.href='sistemasoperativosunidad3.html'">Entrar a Unidad 3</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botón de volver al inicio -->
+            <div class="back-to-main">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="sistemas.js"></script>
+    <script src="sistemas2.js"></script>
+</body>
+
+</html>

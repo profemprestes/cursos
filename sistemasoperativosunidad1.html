@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Operativos Linux | Matías Prestes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="sistemas.css">
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Navegación lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-footer">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+            <div class="sidebar-header">
+                <h3>Sistemas Operativos</h3>
+                <button id="close-menu" class="close-menu"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-category">
+                    <span class="category-title"><i class="fas fa-book"></i> 1. Fundamentos del Sistema Operativo
+                        Linux</span>
+                    <ul class="submenu">
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-history"></i> 1.1. Historia y Filosofía de
+                                Linux</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#historia-unix-linux"><i class="fas fa-terminal"></i> 1.1.1. Historia del
+                                        Sistema Operativo Unix y la Creación de Linux</a></li>
+                                <li><a href="#filosofia-open-source"><i class="fab fa-osi"></i> 1.1.2. Filosofía del
+                                        Software Libre y de Código Abierto</a></li>
+                                <li><a href="#distribuciones-linux"><i class="fab fa-linux"></i> 1.1.3. Distribuciones
+                                        de Linux: Diferencias y Similitudes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-download"></i> 1.2. Instalación y
+                                Configuración Inicial</span>
+                        </li>
+                        <li><a href="#instalacion"><i class="fas fa-cog"></i> 1.3. Instalación</a></li>
+                        <li><a href="#medios-instalacion"><i class="fas fa-usb"></i> 1.4. Medios de Instalación (USB,
+                                DVD, Red)</a></li>
+                        <li><a href="#instalacion-paso-paso"><i class="fas fa-list-ol"></i> 1.5. Instalación Paso a Paso
+                                de Diferentes Distribuciones</a></li>
+                        <li>
+                            <span class="subcategory-title"><i class="fas fa-sliders-h"></i> 1.6. Configuración
+                                Inicial</span>
+                            <ul class="sub-submenu">
+                                <li><a href="#particiones-filesystems"><i class="fas fa-hdd"></i> 1.6.1. Selección de
+                                        Particiones, Sistemas de Archivos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#config-basica"><i class="fas fa-wrench"></i> 1.7. Configuración Básica del
+                                Sistema</a></li>
+                        <li><a href="#config-red"><i class="fas fa-network-wired"></i> 1.8. Configuración de la Red</a>
+                        </li>
+                        <li><a href="#config-usuarios"><i class="fas fa-users-cog"></i> 1.9. Configuración de Usuarios y
+                                Permisos</a></li>
+                        <li><a href="#gestion-paquetes"><i class="fas fa-box"></i> 1.10. Actualización y Gestión de
+                                Paquetes</a></li>
+                        <li><a href="#comandos-herramientas"><i class="fas fa-terminal"></i> 1.11. Comandos y
+                                Herramientas de la Línea de Comandos</a></li>
+                        <li><a href="#uso-terminal"><i class="fas fa-keyboard"></i> 1.12. Uso de la Terminal</a></li>
+                        <li><a href="#navegacion-archivos"><i class="fas fa-folder-open"></i> 1.13. Navegación del
+                                Sistema de Archivos</a></li>
+                        <li><a href="#manipulacion-archivos"><i class="fas fa-file-alt"></i> 1.14. Manipulación de
+                                Archivos y Directorios</a></li>
+                        <li><a href="#edicion-archivos"><i class="fas fa-edit"></i> 1.15. Visualización y Edición de
+                                Archivos</a></li>
+                    </ul>
+                </li>
+            </ul>
+           
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <button id="toggle-menu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+            <!-- Botón de volver al principio -->
+            <div class="back-to-top" id="back-to-top">
+                <a href="#" class="back-to-top-button"><i class="fas fa-arrow-up"></i> Volver al principio</a>
+            </div>
+
+            <!-- Sección de Cabecera -->
+            <section class="course-header-section">
+                <div id="particles-js"></div>
+                <div class="course-header-content" data-aos="fade-up">
+                    <h1>Sistemas Operativos Linux</h1>
+                    <div class="course-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <p class="course-description">
+                        Bienvenido al curso de Sistemas Operativos Linux. En este curso aprenderás los fundamentos
+                        del sistema operativo Linux, desde su instalación y configuración hasta la administración
+                        avanzada de usuarios, permisos y automatización de tareas mediante scripts.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sección de Materiales Recomendados -->
+            <section class="recommended-materials-section" data-aos="fade-up">
+                <div class="course-container">
+                    <h2>Materiales Recomendados</h2>
+                    <div class="recommended-materials-list">
+                        <div class="material-card" data-aos="fade-right">
+                            <i class="fas fa-book"></i>
+                            <a href="https://www.fultus.com" target="_blank">Garrels, M. (2010). Bash Guide for
+                                Beginners. Fultus Corporation.</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="100">
+                            <i class="fas fa-globe"></i>
+                            <a href="https://www.gnu.org/gnu/thegnuproject.es.html" target="_blank">GNU (2013). El
+                                proyecto GNU. https://www.gnu.org/gnu/thegnuproject.es.html</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="200">
+                            <i class="fas fa-book-open"></i>
+                            <a href="https://www.pearson.com" target="_blank">Tanenbaum, A. S. (2003). Sistemas
+                                operativos modernos. Pearson Educación.</a>
+                        </div>
+                        <div class="material-card" data-aos="fade-right" data-aos-delay="300">
+                            <i class="fas fa-laptop-code"></i>
+                            <a href="https://www.ucm.es" target="_blank">Velasco, S. (2008). Creación de scripts en
+                                Linux. Universidad Complutense de Madrid.</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Contenido del Curso -->
+            <section class="course-content-section">
+                <div class="course-container">
+                    <!-- Unidad 1: Fundamentos -->
+                    <div class="content-unit" id="historia-unix-linux" data-aos="fade-up">
+                        <h2>1. Fundamentos del Sistema Operativo Linux</h2>
+                        <h3>1.1. Historia y Filosofía de Linux</h3>
+                        <h4>1.1.1. Historia del Sistema Operativo Unix y la Creación de Linux</h4>
+
+                        <div class="content-card">
+                            <p>
+                                Linux fue creado en 1991 por Linus Torvalds mientras era estudiante en la Universidad de
+                                Helsinki.
+                                Su desarrollo comenzó como un proyecto personal para crear un nuevo kernel de sistema
+                                operativo libre,
+                                inspirado en MINIX, una versión pequeña de UNIX.
+                            </p>
+                            <p>
+                                El kernel de Linux se distribuyó inicialmente bajo su propia licencia, que tenía
+                                restricciones
+                                sobre actividades comerciales. Sin embargo, en 1992, el kernel se relicenció bajo la GNU
+                                General
+                                Public License (GPL), lo que permitió su distribución libre y comercial.
+                            </p>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1969</div>
+                                    <div class="timeline-content">
+                                        <h5>Unix creado en Bell Labs</h5>
+                                        <p>Ken Thompson y Dennis Ritchie desarrollan UNIX en AT&T Bell Labs.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1983</div>
+                                    <div class="timeline-content">
+                                        <h5>Proyecto GNU</h5>
+                                        <p>Richard Stallman inicia el Proyecto GNU para crear un sistema operativo tipo
+                                            Unix completamente libre.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1991</div>
+                                    <div class="timeline-content">
+                                        <h5>Linux es creado</h5>
+                                        <p>Linus Torvalds crea la primera versión del kernel Linux y la comparte en un
+                                            grupo de noticias.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1992-1993</div>
+                                    <div class="timeline-content">
+                                        <h5>Primeras distribuciones</h5>
+                                        <p>Aparecen las primeras distribuciones completas de Linux, incluyendo Slackware
+                                            y Debian.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="filosofia-open-source" data-aos="fade-up">
+                        <h4>1.1.2. Filosofía del Software Libre y de Código Abierto</h4>
+                        <div class="content-card">
+                            <p>
+                                La filosofía del software libre y de código abierto es central en Linux. Promueve la
+                                libertad de usar, estudiar, modificar y distribuir el software. Esto fomenta la
+                                colaboración y la innovación, permitiendo a los desarrolladores de todo el mundo
+                                contribuir al software y mejorarlo constantemente.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="distribuciones-linux" data-aos="fade-up">
+                        <h4>1.1.3. Distribuciones de Linux: Diferencias y Similitudes</h4>
+                        <div class="content-card">
+                            <p>
+                                Existen numerosas distribuciones de Linux, cada una adaptada a diferentes necesidades.
+                                Algunas de las más populares incluyen Ubuntu, Fedora, Debian y CentOS. Aunque todas
+                                están basadas en el mismo núcleo (kernel) de Linux, varían en su gestión de paquetes,
+                                entorno de escritorio y herramientas preinstaladas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="instalacion" data-aos="fade-up">
+                        <h3>1.2. Instalación y Configuración Inicial</h3>
+                        <h4>1.3. Instalación</h4>
+                        <div class="content-card">
+                            <p>
+                                La instalación de Linux puede variar según la distribución, pero generalmente sigue
+                                estos pasos:
+                            </p>
+                            <ul>
+                                <li>Descargar la imagen ISO de la distribución deseada.</li>
+                                <li>Crear un medio de instalación (USB, DVD).</li>
+                                <li>Arrancar desde el medio de instalación.</li>
+                                <li>Seguir las instrucciones del instalador.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="medios-instalacion" data-aos="fade-up">
+                        <h4>1.4. Medios de Instalación</h4>
+                        <div class="content-card">
+                            <div class="info-card">
+                                <h5><i class="fas fa-usb"></i> USB</h5>
+                                <p>El método más común y conveniente para instalar Linux.</p>
+                            </div>
+                            <div class="info-card">
+                                <h5><i class="fas fa-dvd"></i> DVD</h5>
+                                <p>Una opción alternativa si no se dispone de un USB.</p>
+                            </div>
+                            <div class="info-card">
+                                <h5><i class="fas fa-network-wired"></i> Red</h5>
+                                <p>Instalación a través de la red, útil para instalaciones masivas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="instalacion-paso-paso" data-aos="fade-up">
+                        <h4>1.5. Instalación Paso a Paso de Diferentes Distribuciones</h4>
+                        <div class="content-card">
+                            <p>
+                                A continuación, se muestra un ejemplo de instalación de Ubuntu:
+                            </p>
+                            <ol>
+                                <li>Descargar la imagen ISO de Ubuntu desde su sitio oficial.</li>
+                                <li>Crear un USB de arranque con la herramienta Rufus.</li>
+                                <li>Arrancar desde el USB y seleccionar "Instalar Ubuntu".</li>
+                                <li>Seguir las instrucciones del instalador, seleccionando el idioma, la zona horaria, y
+                                    creando una cuenta de usuario.</li>
+                                <li>Esperar a que finalice la instalación y reiniciar el sistema.</li>
+                            </ol>
+                            <img src="img/Instalar-y-configurar-Ubuntu-Server-para-desarrollo-web_02.png" alt="Instalación de Ubuntu">
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="particiones-filesystems" data-aos="fade-up">
+                        <h4>1.6.1. Selección de Particiones y Sistemas de Archivos</h4>
+                        <div class="content-card">
+                            <p>
+                                La selección de particiones y sistemas de archivos es crucial para el rendimiento y la
+                                organización del sistema. A continuación, se muestra un diagrama explicativo:
+                            </p>
+                            <img src="img/particionamiento-recomendado-ubuntufacil.png" alt="Diagrama de Particiones">
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="config-basica" data-aos="fade-up">
+                        <h4>1.7. Configuración Básica del Sistema</h4>
+                        <div class="content-card">
+                            <p>
+                                Después de la instalación, es importante realizar algunas configuraciones básicas:
+                            </p>
+                            <ul>
+                                <li>Actualizar el sistema: <code>sudo apt update && sudo apt upgrade</code></li>
+                                <li>Instalar controladores adicionales si es necesario.</li>
+                                <li>Configurar la zona horaria: <code>sudo dpkg-reconfigure tzdata</code></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="config-red" data-aos="fade-up">
+                        <h4>1.8. Configuración de la Red</h4>
+                        <div class="content-card">
+                            <p>
+                                La configuración de la red puede realizarse tanto para conexiones Ethernet como WiFi. A
+                                continuación, se muestra un ejemplo de configuración para cada tipo:
+                            </p>
+                            <h5>Configuración Ethernet</h5>
+                            <pre><code>sudo nano /etc/network/interfaces
+auto eth0
+iface eth0 inet dhcp</code></pre>
+                            <h5>Configuración WiFi</h5>
+                            <pre><code>sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+network={
+    ssid="nombre_de_red"
+    psk="contraseña"
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="config-usuarios" data-aos="fade-up">
+                        <h4>1.9. Configuración de Usuarios y Permisos</h4>
+                        <div class="content-card">
+                            <p>
+                                La gestión de usuarios y permisos en Linux es fundamental para la seguridad y
+                                organización del sistema. A continuación, se muestra una tabla comparativa de comandos y
+                                permisos:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>useradd</code></td>
+                                        <td>Crear un nuevo usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>usermod</code></td>
+                                        <td>Modificar un usuario existente</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>userdel</code></td>
+                                        <td>Eliminar un usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chmod</code></td>
+                                        <td>Cambiar permisos de archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>chown</code></td>
+                                        <td>Cambiar propietario de archivos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="gestion-paquetes" data-aos="fade-up">
+                        <h4>1.10. Gestión de Paquetes y Actualizaciones</h4>
+                        <div class="content-card">
+                            <p>
+                                En Linux, la gestión de paquetes se realiza mediante gestores de paquetes como APT, DNF,
+                                entre otros. A continuación, se muestran algunos ejemplos:
+                            </p>
+                            <h5>APT (Debian/Ubuntu)</h5>
+                            <pre><code>sudo apt update
+sudo apt install nombre_paquete</code></pre>
+                            <h5>DNF (Fedora)</h5>
+                            <pre><code>sudo dnf update
+sudo dnf install nombre_paquete</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="comandos-herramientas" data-aos="fade-up">
+                        <h4>1.11. Comandos y Herramientas de la Línea de Comandos</h4>
+                        <div class="content-card">
+                            <p>
+                                La línea de comandos es una herramienta poderosa en Linux. A continuación, se muestran
+                                algunos comandos básicos con ejemplos:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>ls</code></td>
+                                        <td>Listar archivos y directorios</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cd</code></td>
+                                        <td>Cambiar de directorio</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cp</code></td>
+                                        <td>Copiar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mv</code></td>
+                                        <td>Mover o renombrar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rm</code></td>
+                                        <td>Eliminar archivos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="uso-terminal" data-aos="fade-up">
+                        <h4>1.12. Uso de la Terminal</h4>
+                        <div class="content-card">
+                            <p>
+                                La terminal es una interfaz de línea de comandos que permite interactuar con el sistema
+                                operativo. A continuación, se muestra una demostración visual de la terminal con
+                                ejemplos de comandos en ejecución:
+                            </p>
+                            <img src="img/interfaces-usuario.png" alt="Demostración de la Terminal">
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="navegacion-archivos" data-aos="fade-up">
+                        <h4>1.13. Navegación del Sistema de Archivos</h4>
+                        <div class="content-card">
+                            <p>
+                                La navegación del sistema de archivos en Linux se realiza principalmente a través de la
+                                terminal. A continuación, se muestran algunos comandos útiles:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>pwd</code></td>
+                                        <td>Mostrar el directorio actual</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ls</code></td>
+                                        <td>Listar archivos y directorios</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>cd</code></td>
+                                        <td>Cambiar de directorio</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>find</code></td>
+                                        <td>Buscar archivos y directorios</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="manipulacion-archivos" data-aos="fade-up">
+                        <h4>1.14. Manipulación de Archivos y Directorios</h4>
+                        <div class="content-card">
+                            <p>
+                                La manipulación de archivos y directorios en Linux se realiza mediante comandos
+                                específicos. A continuación, se muestran algunos ejemplos:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>cp</code></td>
+                                        <td>Copiar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mv</code></td>
+                                        <td>Mover o renombrar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rm</code></td>
+                                        <td>Eliminar archivos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>mkdir</code></td>
+                                        <td>Crear directorios</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>rmdir</code></td>
+                                        <td>Eliminar directorios vacíos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-unit" id="edicion-archivos" data-aos="fade-up">
+                        <h4>1.15. Visualización y Edición de Archivos</h4>
+                        <div class="content-card">
+                            <p>
+                                La visualización y edición de archivos en Linux se puede realizar mediante varios
+                                editores de texto. A continuación, se muestran algunos ejemplos:
+                            </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comando</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>cat</code></td>
+                                        <td>Mostrar el contenido de un archivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>nano</code></td>
+                                        <td>Editor de texto en la terminal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vim</code></td>
+                                        <td>Editor de texto avanzado en la terminal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>gedit</code></td>
+                                        <td>Editor de texto gráfico</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Botón de volver al inicio -->
+            <div class="back-to-main">
+                <a href="index.html" class="back-button"><i class="fas fa-home"></i> Volver a la página principal</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="sistemas.js"></script>
+</body>
+
+</html>

@@ -215,4 +215,12 @@ document.addEventListener('DOMContentLoaded', function() {
             backToTopButton.style.display = 'none';
         }
     });
+
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });
